@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "3hsYPBe8PdUf6Yo8KbgotHaZhdWMwkq+OvtoxUQIxfPtqDgDqZHHKesrAsVEhOq3nezwJBKosnUnlhbOUoS9GA==",
+  "success": true,
+  "projectFilePath": "D:\\Anket\\PERSONAL DATA\\.NET\\.NET CORE\\Application\\Reference Application\\EkartApplication\\EkartCommon\\EkartCommon.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Vaibhav V. Shinde\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Vaibhav V. Shinde\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Vaibhav V. Shinde\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

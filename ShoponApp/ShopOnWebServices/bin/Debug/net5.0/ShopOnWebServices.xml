@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ShopOnWebServices</name>
+    </assembly>
+    <members>
+        <member name="M:ShopOnWebServices.Controllers.ProductsController.Get">
+            <summary>
+            Return all products
+            </summary>
+            <returns>A List of Products</returns>
+            <remarks>
+                Sample request:
+                
+                    GET:/api/Products
+            </remarks>
+        </member>
+        <member name="M:ShopOnWebServices.Controllers.ProductsController.Get(System.Int32)">
+            <summary>
+            Return a product
+            </summary>
+            <returns>A Products</returns>
+            <remarks>
+                Sample request:
+                
+                    GET:/api/Products/1
+            </remarks>
+        </member>
+        <member name="M:ShopOnWebServices.Controllers.ProductsController.Create(ShoponCommonLayer.Models.Product)">
+            <summary>
+            Create a product and return
+            </summary>
+            <returns>create a Product</returns>
+            <remarks>
+                Sample request:
+                
+                    POST:/api/Products
+            </remarks>
+        </member>
+        <member name="M:ShopOnWebServices.Controllers.ProductsController.Update(System.Int32,ShoponCommonLayer.Models.Product)">
+            <summary>
+            Update a product and return
+            </summary>
+            <returns>Update a Product</returns>
+            <remarks>
+                Sample request:
+                
+                    PUT:/api/Products/1
+            </remarks>
+        </member>
+        <member name="M:ShopOnWebServices.Controllers.ProductsController.Delete(System.Int32)">
+            <summary>
+            Delete a product
+            </summary>
+            <returns>Delete a Product</returns>
+            <remarks>
+                Sample request:
+                
+                    DELETE:/api/Products/1
+            </remarks>
+        </member>
+        <member name="M:ShopOnWebServices.Controllers.ProductsController.Get(System.String)">
+            <summary>
+            Return a product
+            </summary>
+            <returns>return a Product</returns>
+            <remarks>
+                Sample request:
+                
+                    GET:/api/Products/apple
+            </remarks>
+        </member>
+    </members>
+</doc>

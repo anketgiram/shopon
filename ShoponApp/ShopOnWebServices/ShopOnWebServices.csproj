@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>D:\Dotnet Training\ShopOnApp\shopon\ShoponApp\ShopOnWebServices\ShopOnWebServices.xml</DocumentationFile>
+    <NoWarn>1701;1702;CS1591;</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shopon.BusinessLayer\ShoponBusinessLayer.csproj" />
+    <ProjectReference Include="..\Shopon.CommonLayer\ShoponCommonLayer.csproj" />
+    <ProjectReference Include="..\Shopon.DataLayer\ShoponDataLayer.csproj" />
+    <ProjectReference Include="..\ShoponEFLayer\ShoponEFLayer.csproj" />
+  </ItemGroup>
+
+</Project>

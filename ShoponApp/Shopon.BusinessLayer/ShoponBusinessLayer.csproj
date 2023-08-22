@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AnalysisLevel>latest</AnalysisLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shopon.CommonLayer\ShoponCommonLayer.csproj" />
+    <ProjectReference Include="..\Shopon.DataLayer\ShoponDataLayer.csproj" />
+  </ItemGroup>
+
+</Project>

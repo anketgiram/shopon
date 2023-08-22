@@ -1,0 +1,90 @@
+﻿@model IEnumerable<EkartWebApp.Models.OrderVM>
+
+@{
+    ViewData["Title"] = "DisplayOrderToDeliver";
+}
+
+<h4>DisplayOrderToDeliver</h4>
+<hr />
+<div class=" container">
+    <div class=" row">
+        <div class=" col-12">
+            <div class=" table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.OrderId)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TotalAmount)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CustomerName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.MobileNo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.stName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.City)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model == null || Model.Count() == 0)
+                        {
+                            <tr>
+                                <td colspan="7">
+                                    <label class="card-text">No Produt to Deliverd</label>
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <a asp-controller="Order" asp-action="GetOrderDetails" asp-route-id="@item.OrderId" class="card-link">
+                                        @Html.DisplayFor(modelItem => item.OrderId)
+                                    </a>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TotalAmount)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CustomerName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MobileNo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.stName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.City)
+                                </td>
+                                <td>
+                                   <a asp-controller="Order" asp-action="DeliverOrder" asp-route-id=" @item.OrderId"
+                                      class="btn btn-sm btn-outline-success">
+                                       Delivered
+                                   </a>
+                                </td>
+                            </tr>
+                        }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<a asp-controller="Order" asp-action="Index" class="btn btn-sm btn-outline-info ">Back To Delivery</a>
+
+
+

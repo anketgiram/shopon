@@ -1,0 +1,45 @@
+﻿@model IEnumerable<EkartCommon.Models.Order>
+@{
+    ViewData["Title"] = "Index";
+}
+<h4>Order Details</h4>
+</hr>
+<div class="container">
+    <div class=" row">
+        <div class="col-12">
+            <div class=" table-responsive">
+                <table class=" table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Order Date</th>
+                            <th>Excepted Delivery Date</th>
+                            <th>Customer Name</th>
+                            <th>Area</th>
+                            <th>City</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@item.OrderId</td>
+                            <td>@item.DateTime</td>
+                            <td>@item.ExceptedDeliveryDate</td>
+                            <td>@item.Customer.CustomerName</td>
+                            <td>@item.Customer.CustomerAddress.StName</td>
+                            <td>@item.Customer.CustomerAddress.City</td>
+                            <td>
+                                <a asp-controller="Order" asp-action="GetOrderDetails"
+                                   asp-route-id="@item.OrderId" class="btn btn-sm btn-outline-info">Detail</a>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

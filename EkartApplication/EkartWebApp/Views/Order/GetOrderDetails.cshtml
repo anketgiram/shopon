@@ -1,0 +1,142 @@
+﻿@model EkartCommon.Models.Order
+
+@{
+    ViewData["Title"] = "GetOrderDetails";
+}
+<h4>OrderDetails</h4>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <div class="card ">
+                <div class="card-header bg-primary font-weight-bold text-white">
+                    <label class="card-text">Order Details</label>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="orderId" class="font-weight-bold">OrderID:</label>
+                            <span id="orderId" class="card-text">@Model.OrderId</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="Date Time" class="font-weight-bold">Date Time</label>
+                            <span id="Date Time" class="card-text">@Model.DateTime</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="OrderAmount" class="font-weight-bold">OrderAmount</label>
+                            <span id="OrderAmount" class="card-text">@Model.OrderAmount</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="OrderExpDD" class="font-weight-bold">Expected Date</label>
+                            <span id="OrderExpDD" class="card-text">@Model.ExceptedDeliveryDate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class=" card ">
+                <div class="card-header bg-primary font-weight-bold text-white">
+                    <label class="card-text">
+                        customer Details
+                    </label>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 ">
+                            <label for="customerName " class="font-weight-bold">Customer Name:</label>
+                            <span id="customerName">@Model.Customer.CustomerName</span>
+                        </div>
+                        <div class="col-12 ">
+                            <label for="customerMobileNo " class="font-weight-bold">CustomerMobile No:</label>
+                            <span id="customerMobileNo">@Model.Customer.CustomerMobileNo</span>
+                        </div>
+                        <div class="col-12 ">
+                            <label for="customerEmailId" class="font-weight-bold">CustomerEmailID:</label>
+                            <span id="customerEmailId">@Model.Customer.EmailID</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class=" card ">
+                <div class="card-header bg-primary font-weight-bold text-white">
+                    <label class="card-text">
+                        customer Address Details
+                    </label>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 ">
+                            <label for="stName" class="font-weight-bold">Street Name:</label>
+                            <span id="stName">@Model.Customer.CustomerAddress.StName</span>
+                        </div>
+                        <div class="col-12 ">
+                            <label for="City" class="font-weight-bold">City:</label>
+                            <span id="city">@Model.Customer.CustomerAddress.City</span>
+                        </div>
+                        <div class="col-12 ">
+                            <label for="State" class="font-weight-bold">State:</label>
+                            <span id="State">@Model.Customer.CustomerAddress.State</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" row ">
+        <div class=" col-12">
+            <div class=" card my-3">
+                <div class="card-header bg-success">
+                    <label class="font-weight-bold text-white">Cart Item</label>
+                </div>
+                <div class="card-body">
+                    <div class=" table-responsive">
+                        <table class="table" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Price</th>
+                                    <th>Qty</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.OrderItems)
+                                {
+                                    <tr>
+                                        <td>&#x20B9 @item.Price</td>
+                                        <td>@item.Qty</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class=" d-flex justify-content-between">
+                        <div class="font-weight-bold">Order Total:</div>
+                        <div class="font-weight-bold">
+                            &#x20B9 @Model.OrderAmount
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @if(Model.OrderStatus.OrderStatusId == (int)EkartCommon.Models.OrderstatusType.ORDERECEVIED)
+    {
+        <a asp-controller="Order" asp-action="PlaceOrder" class="btn btn-sm btn-outline-success" asp-route-id="@Model.OrderId">
+            Add To Delivery
+        </a>
+    }
+
+    <a asp-controller="Order" asp-action="Index" class="btn btn-sm btn-outline-dark">Back To Delivery</a>
+
+</div>
+

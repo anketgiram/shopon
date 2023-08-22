@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EkartWebApp", "EkartWebApp\EkartWebApp.csproj", "{840CCE6C-9103-4BFE-A6D8-C5EFB858072C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EkartCommon", "EkartCommon\EkartCommon.csproj", "{DAF8B194-1E83-4027-B3F7-9FE96CF01820}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EkartBussiness", "EkartBussiness\EkartBussiness.csproj", "{D3E0CE81-F562-4FF0-8C61-7B140A8310A4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EkartData", "EkartData\EkartData.csproj", "{F3629044-6F61-4D30-B544-51C81F33C7E0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EkartEF", "EkartEF\EkartEF.csproj", "{D4B2F537-E483-4DB8-8C3B-F96E9604956F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EkartServices", "EkartServices\EkartServices.csproj", "{CF7454CF-BD85-406D-8814-BD271C17DA2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{840CCE6C-9103-4BFE-A6D8-C5EFB858072C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{840CCE6C-9103-4BFE-A6D8-C5EFB858072C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{840CCE6C-9103-4BFE-A6D8-C5EFB858072C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{840CCE6C-9103-4BFE-A6D8-C5EFB858072C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAF8B194-1E83-4027-B3F7-9FE96CF01820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAF8B194-1E83-4027-B3F7-9FE96CF01820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAF8B194-1E83-4027-B3F7-9FE96CF01820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAF8B194-1E83-4027-B3F7-9FE96CF01820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3E0CE81-F562-4FF0-8C61-7B140A8310A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3E0CE81-F562-4FF0-8C61-7B140A8310A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3E0CE81-F562-4FF0-8C61-7B140A8310A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3E0CE81-F562-4FF0-8C61-7B140A8310A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3629044-6F61-4D30-B544-51C81F33C7E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3629044-6F61-4D30-B544-51C81F33C7E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3629044-6F61-4D30-B544-51C81F33C7E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3629044-6F61-4D30-B544-51C81F33C7E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4B2F537-E483-4DB8-8C3B-F96E9604956F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4B2F537-E483-4DB8-8C3B-F96E9604956F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4B2F537-E483-4DB8-8C3B-F96E9604956F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4B2F537-E483-4DB8-8C3B-F96E9604956F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF7454CF-BD85-406D-8814-BD271C17DA2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF7454CF-BD85-406D-8814-BD271C17DA2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF7454CF-BD85-406D-8814-BD271C17DA2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF7454CF-BD85-406D-8814-BD271C17DA2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52BC21EF-DE3E-4152-8219-B7E9EC3A3436}
+	EndGlobalSection
+EndGlobal

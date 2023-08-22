@@ -1,0 +1,40 @@
+﻿@model IEnumerable<EkartCommon.Models.Order>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h4>Order Details</h4>
+<hr/>
+<div class ="container">
+    <div  class=" row">
+        <div class ="col-12">
+            <div class=" table-responsive">
+                <table class=" table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Order Date</th>
+                            <th>Excepted Delivery Date</th>
+                            <th>Customer Name</th>
+                            @*<th>City</th>
+                            <th>State</th>*@                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                          @foreach (var item in Model)
+                          {
+                              <tr>
+                                   <td>@item.OrderId</td>
+                                   <td>@item.DateTime</td>
+                                   <td>@item.ExceptedDeliveryDate</td>
+                                   <td>@item.Customer.CustomerName</td>
+                                   @*<td>@item.Customer.CustomerAddress.City</td>
+                                   <td>@item.Customer.CustomerAddress.State</td>*@
+                              </tr>
+                          }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

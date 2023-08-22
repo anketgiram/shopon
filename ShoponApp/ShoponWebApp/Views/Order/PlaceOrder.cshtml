@@ -1,0 +1,72 @@
+﻿@model ShoponCommonLayer.Models.Order
+
+@{
+    ViewData["Title"] = "PlaceOrder";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h4>My Order</h4>
+             <hr />
+        </div>
+    </div>
+   <div class="row">
+       <div class="col-12">
+           <div class="card" id="clear">
+               <div class="card-header">
+                   <div class="row">
+                       <div class="col-4">
+                           <div class="card-text">Order Placed</div>
+                           <div class="card-text">@Model.OrderDate</div>
+                       </div>
+                       <div class="col-4">
+                           <div class="card-text">Order #</div>
+                           <div class="card-text">@Model.OrderId</div>
+                       </div>
+                   </div>
+               </div>
+               <div class="card-body">
+                   @foreach(var Item in Model.GetOrderItems())
+                    {
+                        <div class="row">
+                            <div class="col-4">
+                                <img class="cart-product-img" src="~/@Url.Content(Item.Product.ImageUrl)"/>
+                            </div>
+                            <div class="col-2">
+                                <label class="card-text">@Item.Product.ProductName</label>
+                            </div>
+                            <div class="col-2">
+                                 <label class="card-text">Price:</label>
+                                 <label class="card-text">@Item.Product.Price</label>
+                            </div>
+                            <div class="col-2">
+                                 <label class="card-text">Qty:</label>
+                                 <label class="card-text">@Item.Qty</label>
+                            </div>
+                            <div class="col-2">
+                                 <label class="card-text">Total:</label>
+                                 <label class="card-text">@Item.GetAmount()</label>
+                            </div>
+                        </div>
+                        <hr/>
+                    }
+               </div>
+               <div class="card-footer">
+                   <div class="row">
+                       <div class="col-12">
+                           <label class="text-black-50">
+                               Total Amount:
+                           </label>
+                           <span class="inr-sign"></span>
+                           <span class="price">@Model.OrderTotal</span>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

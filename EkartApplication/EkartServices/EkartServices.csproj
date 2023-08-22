@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EkartBussiness\EkartBussiness.csproj" />
+    <ProjectReference Include="..\EkartCommon\EkartCommon.csproj" />
+    <ProjectReference Include="..\EkartData\EkartData.csproj" />
+    <ProjectReference Include="..\EkartEF\EkartEF.csproj" />
+  </ItemGroup>
+
+</Project>

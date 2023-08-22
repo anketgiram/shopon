@@ -1,0 +1,21 @@
+﻿@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<EkartEF.Models.Staff> signInManager
+
+
+
+<div class="navbar-nav justify-content-center">
+        @if (signInManager.IsSignedIn(User))
+        //checked wether user is LoginVM or not if log in then only logout option is available for that
+        {
+                <form method="post" asp-controller="Account" asp-action="Logout">
+                    <button class=" btn btn-sm btn-outline-dark">
+                        logout @User.Identity.Name
+                    </button>
+                </form> 
+        }
+        else
+        {
+             <a asp-controller="Account" asp-action="Login" class="btn-btn-sm btn-outline-dark">Login</a>
+        }
+</div>

@@ -1,0 +1,132 @@
+﻿@model List<ShoponWebApp.Models.CartVM>
+
+@{
+    ViewData["Title"] = "DisplayCartData";
+    
+}
+
+<div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4>My Cart(@ViewBag.CartCnt)</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-sm-12">
+                <div class="cart-dt"> 
+                    @if(Model==null || Model.Count==0)
+                    {
+                        <div class="row">
+                            <div class="col-12">
+                                <label class="card-text">
+                                    Your ShopOn Cart is Empty
+                                </label>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        @foreach(var cartVM in Model)
+                        {
+                            <div class="row">
+                                <div class="col-4">
+                                    <img class="cart-product-img" src="~/@Url.Content(cartVM.ImageUrl)"/>
+                                </div>
+                                <div class="col">
+                                    <h5>@cartVM.ProductName</h5>
+                                    <label>Price:</label>
+                                    <span class="inr-sign"></span>
+                                    <span class="price">@cartVM.Price.ToString("N")</span>
+                                    <div>
+                                        <label>Qty:</label>
+                                        <input type="number" value="@cartVM.Qty" min="1" max="5"
+                                            data-id="@cartVM.PId"
+                                            onClick="calculateAmount(@cartVM.Price)"/>
+                                        <a class="btn btn-sm btn-outline-danger btnRemove"
+                                            onclick="deleteCartItem()"
+                                            data-id="@cartVM.PId">Remove</a>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-black-50">Total:</span>
+                                        <span class="inr-sign"></span>
+                                        <span class="price cartPrice" id="amount_@cartVM.PId">@cartVM.TotalAmount.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                        }
+                    }
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="cart-dt">
+                    <h3>Cart Total</h3>
+                    <div class="row">
+                        <div class="col-6">Item(s) Count:</div>
+                        <div class="col-6 text-right">
+                            @ViewBag.CartCnt
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">Total Amount:</div>
+                        <div class="col-6 text-right">
+                            <span class="inr-sign"></span>
+                            <span class="price" id="cartTotal">0.00</span>
+                        </div>
+                    </div>                
+                </div>
+                @if (ViewBag.CartCnt != 0)
+                {
+                    <a asp-controller="Order" asp-action="PlaceOrder" class="btn btn-outline-success my-3">
+                        Place Order
+                    </a>
+                }
+            </div>
+        </div>
+    
+</div>
+<div>
+    <hr />
+    <a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary">
+        Continue Shopping
+    </a>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function()
+        {
+            calculateTotalAmount();
+        });
+        function calculateAmount(price)
+        {
+           let qty=$(event.target).val();   //getting the qty as object using target
+           let id=$(event.target).data("id"); //get the id from the data(data-id="CartVM.pid")
+           let amount=price*qty;
+           console.log(amount+':'+id);
+           $("#amount_"+id).text(amount.toFixed(2));
+           window.location.href='@Url.Action("UpdateCart")?id='+id+'&qty='+qty+'&amount='+amount;
+           calculateTotalAmount();
+        }
+        function calculateTotalAmount()
+        {
+            let total=0;
+            $(".cartPrice").each(function(i,data)    //loop through the cartPrice
+            {
+                total+=parseFloat(data.innerText);    //cartPrice is span,if you want to fetch data between div or span use .innerText
+                                                      //all the data in the form of text,so for adding the total parse to float
+            });
+            $("#cartTotal").text(total.toFixed(2));
+        }
+
+        function deleteCartItem()
+        {
+            let id=$(event.target).data("id");
+            let userChoice=confirm("Are you sure you want to remove this item from cart");
+            if(userChoice)
+            {
+                window.location.href='@Url.Action("DeleteCart")/'+id;
+            }
+        }
+    </script>
+}

@@ -1,0 +1,20 @@
+﻿@using Microsoft.AspNetCore.Http
+@*to getting session data we are using @inject*@
+@inject IHttpContextAccessor HttpContectAccessor
+
+<div class="navbar-nav justify-content-center">
+    <a asp-controller="Order" asp-action="DisplayOrderToDeliver">
+        <div class="cart-bg mx-4"></div>
+        @if (HttpContectAccessor.HttpContext.Session.GetInt32("Cartcnt") == null)
+        {
+            <span class=" badge badge-pill cart-pill">0</span>
+        }
+        else
+        {
+             <span class=" badge badge-pill cart-pill">
+                 @HttpContectAccessor.HttpContext.Session.GetInt32("Cartcnt").Value
+             </span>
+        }
+
+    </a>
+</div>
